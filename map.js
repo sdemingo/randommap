@@ -1,12 +1,23 @@
 
 
-var TILE_SZ = 10
+let TILE_SZ = 10
 
-WATER = -1
-GRASS = 0
-FOREST = 1
+let WATER = -1
+let GRASS = 0
+let FOREST = 1
+  
+let FOREST_AMOUNT = 40
 
-function Game(parent) {
+/*
+    Primera prueba con el automata de:
+    https://www.davideaversa.it/blog/random-maps-with-cellular-automata/
+
+    Para esta implementación FOREST_AMOUNT debe variar entre el 20 y el 40 no más de ahí
+    Como primera aproximación no está mal. ahora deberia limpiar un poco más para no 
+    dejar tanta pared aislada
+
+*/
+function Map(parent) {
 
     this.canvas = document.createElement("canvas");
     this.ctxt = this.canvas.getContext("2d");
@@ -20,83 +31,43 @@ function Game(parent) {
 
     this.grid = []
 
-    // inicialize grid
+    // inicialize random grid
     for (var x = 0; x < this.cols; x++) {
         this.grid[x] = new Array()
         for (var y = 0; y < this.rows; y++) {
-            this.grid[x][y] = GRASS
-        }
-    }
-
-    // set random forest center
-    for (var x = 0; x < this.cols; x++) {
-        for (var y = 0; y < this.rows; y++) {
-            if (Math.random() < 0.35) {
+            if (Math.floor(Math.random() * 101 < FOREST_AMOUNT)) {
                 this.grid[x][y] = FOREST
-            }
-        }
-    }
-
-    // merge
-    for (var x = 0; x < this.cols; x++) {
-        for (var y = 0; y < this.rows; y++) {
-            if (lookForInAdjacent(this.grid, x, y, GRASS) >= 5) {
-                this.grid[x][y] = GRASS
             } else {
-                this.grid[x][y] = FOREST
-
+                this.grid[x][y] = GRASS
             }
+
         }
     }
+}
 
-    // build river. vamos relleando baldosas del rio desde
-    // la posición inicial que estára siempre en el borde superior
-    // el rio finaliza cuando se supera algun borde
-
-    rX = 20   // deberia ser random
-    rY = 0
-    this.grid[rX][rY] = WATER
-
-    console.log(randNumber(-1, 1))
-    while (true) {
-        // calculamos la siguiente baldosa de agua
-        rX = rX + randNumber(-1, 1)
-        rY = rY + randNumber(-1, 1)
-        if (rX < 0 || rX > this.cols || rY < 0 || rY > this.rows) {
-            break
-        }
-        this.grid[rX][rY] = WATER
+Map.prototype.isWall = function (r, c) {
+    if (r < 0 || c < 0) {
+        return true;
     }
-
-
-
-
-
-    // Buscar la suma de los vecinos de cada arbol y si suman mas de tanto entonces es arbol y si no no
-    function lookForInAdjacent(grid, col, row, type) {
-        found = 0
-        for (var i = -1; i <= 1; i++) {
-            for (var j = -1; j <= 1; j++) {
-                if ((grid[col + i] != undefined) && (grid[col + i][row + j] == type)) {
-                    found++
-                }
-            }
-        }
-        return found
+    if (c > this.cols - 1 || r > this.rows - 1) {
+        return true;
     }
-
-
+    return this.grid[r][c] == FOREST;
 
 }
 
+// Inicia el automata para hacer el filtrado
+Map.prototype.merge = function () {
+    for (var col = 0; col < this.cols; col++) {
+        for (var row = 0; row < this.rows; row++) {
+            this.grid[col][row] = cellularAutomata(this, row, col,true)
+        }
+    }
+}
 
 
-
-
-Game.prototype.render = function () {
-
+Map.prototype.render = function () {
     this.ctxt.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
     for (var x = 0; x < this.cols; x++) {
         for (var y = 0; y < this.rows; y++) {
             if (this.grid[x][y] == GRASS) {
@@ -112,26 +83,55 @@ Game.prototype.render = function () {
     }
 }
 
+// Implementación del autómata celular y sus reglas de fusionado
+function cellularAutomata(Map, r, c,clean) {
 
+    var numWalls = countAround(Map, r, c, 1, 1);
+    var numWalls2 = countAround(Map, r, c, 2, 2);
 
-var world
-
-window.onload = function () {
-
-    var parent = document.body
-    // create new Game
-    world = new Game(parent)
-
-    world.render()
+    if (Map.isWall(r, c)) { 
+        if (numWalls >= 3) {
+            return FOREST;
+        }
+        return GRASS;
+    }
+    else {
+        if (!clean) {
+            if (numWalls >= 5 || numWalls2 <= 2) {
+                return FOREST;
+            }
+        } else {
+            if (numWalls >= 5) {
+                return FOREST;
+            }
+        }
+    }
+    return GRASS;
 }
 
 
+function countAround(Map, r, c, scope_x, scope_y) {
 
+    var startX = c - scope_x;
+    var startY = r - scope_y;
+    var endX = c + scope_x;
+    var endY = r + scope_y;
 
+    var wallCounter = 0;
 
-function randNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    for (var iY = startY; iY <= endY; iY++) {
+        for (var iX = startX; iX <= endX; iX++) {
+            if (!(iX == c && iY == r)) {
+                //console.log(iX)
+                if (Map.isWall(iY, iX)) {
+                    wallCounter += 1;
+                }
+            }
+        }
+    }
+    return wallCounter;
 }
+
 
 
 function drawRectangule(cx, x, y, color) {
@@ -143,4 +143,32 @@ function drawRectangule(cx, x, y, color) {
     //cx.strokeStyle = 'black';
     //cx.stroke();
 }
+
+
+
+/*
+
+            CODIGO PRINCIPAL
+            ================
+
+*/
+
+var world
+
+window.onload = function () {
+    var parent = document.body
+    world = new Map(parent)
+    world.merge()
+    world.render()
+}
+
+
+
+/*
+
+function randNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+*/
+
 
