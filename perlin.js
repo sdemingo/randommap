@@ -11,7 +11,10 @@
  * This code was placed in the public domain by its original author,
  * Stefan Gustavson. You may use it as you see fit, but
  * attribution is appreciated.
- *
+ * 
+ * Author: josephg
+ * Source: https://github.com/josephg/noisejs
+ * 
  */
 
 (function(global){
