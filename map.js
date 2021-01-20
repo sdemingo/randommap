@@ -1,11 +1,16 @@
 
 
-let TILE_SZ = 10
+let TILE_SZ = 2
 
 let WATER = -1
-let GRASS = 0
-let FOREST = 1
+let SAND = 0
+let GRASS = 1
+let FOREST = 2
+let MOUNTAIN = 3
+let SNOW = 4
 
+let MAX_COLS=512
+let MAX_ROWS=256
 
 
 function Tile(type) {
@@ -15,23 +20,29 @@ function Tile(type) {
 
 function getColorByType(tile) {
     switch (tile.type) {
+        case SAND:
+            return 'brown'
         case GRASS:
             return 'green'
         case FOREST:
             return 'darkGreen'
         case WATER:
             return 'darkBlue'
+        case MOUNTAIN:
+            return 'grey'
+        case SNOW:
+            return 'white'
     }
 }
 
 function getColorByHeight(tile) {
-    let i=Math.abs(tile.height) * 256
-    return "rgb("+i+","+i+","+i+")"
+    let i = Math.abs(tile.height) * 256
+    return "rgb(" + i + "," + i + "," + i + ")"
 }
 
 
 Tile.prototype.render = function (ctxt, x, y, colorFunc) {
-    let color =  colorFunc(this)
+    let color = colorFunc(this)
     console.log(color)
     ctxt.beginPath()
     ctxt.rect(x * TILE_SZ, y * TILE_SZ, TILE_SZ, TILE_SZ)
@@ -53,8 +64,8 @@ function Map(titleText) {
     this.canvas = document.createElement("canvas");
     this.ctxt = this.canvas.getContext("2d");
 
-    this.rows = 50
-    this.cols = 50
+    this.rows = MAX_ROWS
+    this.cols = MAX_COLS
     this.canvas.width = this.cols * TILE_SZ
     this.canvas.height = this.rows * TILE_SZ
 
