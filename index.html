@@ -8,16 +8,24 @@
   <script type="text/javascript" src="perlin.js"></script>
   <script type="text/javascript" src="cellular.js"></script>
   <script type="text/javascript" src="heights.js"></script>
+  <script type="text/javascript" src="river.js"></script>
   <script type="text/javascript" src="map.js"></script>
   <script>
     window.onload = function () {
+      let world0 = new Map("Rios")
+      runRiverBuilder(world0)
+      world0.render(getColorByType)
+
+
       /*let world1 = new Map("Automáta celular")
       runCellular(world1)
       world1.render(getColorByType)*/
 
+      /*
       let world2 = new Map("Alturas")
       runHeightMap(world2)
-      world2.render(getColorByType)
+      world2.render(getColorByHeight)
+      */
     }
   </script>
 </head>

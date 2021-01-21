@@ -1,6 +1,6 @@
 
 
-let TILE_SZ = 2
+let TILE_SZ = 5
 
 let WATER = -1
 let SAND = 0
@@ -9,8 +9,8 @@ let FOREST = 2
 let MOUNTAIN = 3
 let SNOW = 4
 
-let MAX_COLS=512
-let MAX_ROWS=256
+let MAX_COLS=64
+let MAX_ROWS=64
 
 
 function Tile(type) {
@@ -31,19 +31,18 @@ function getColorByType(tile) {
         case MOUNTAIN:
             return 'grey'
         case SNOW:
-            return 'white'
+            return 'silver'
     }
 }
 
 function getColorByHeight(tile) {
-    let i = Math.abs(tile.height) * 256
-    return "rgb(" + i + "," + i + "," + i + ")"
+    return "rgba(0,0,0,"+tile.height+")"
 }
 
 
 Tile.prototype.render = function (ctxt, x, y, colorFunc) {
     let color = colorFunc(this)
-    console.log(color)
+
     ctxt.beginPath()
     ctxt.rect(x * TILE_SZ, y * TILE_SZ, TILE_SZ, TILE_SZ)
     ctxt.fillStyle = color
