@@ -31,14 +31,13 @@ function getColorByType(tile) {
         case MOUNTAIN:
             return 'grey'
         case SNOW:
-            return 'white'
+            return 'silver'
     }
 }
 
 
 function getColorByHeight(tile) {
-    let i = Math.abs(tile.height) * 256
-    return "rgb(" + i + "," + i + "," + i + ")"
+    return "rgba(0,0,0,"+tile.height+")"
 }
 
 
