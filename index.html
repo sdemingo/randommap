@@ -14,13 +14,14 @@
     window.onload = function () {
       let world0 = new Map("Rios")
       runRiverBuilder(world0)
-      world0.render(getColorByType)
+      setTimeout(function(){world0.render()},100)
 
+      ///setTimeout(function(){world0.render(false)},100)
 
       /*let world1 = new Map("Automáta celular")
       runCellular(world1)
-      setTimeout(function(){world1.render()},500)
-      //world1.render()
+      setTimeout(function(){world1.render()},100)
+*/
 
       /*let world2 = new Map("Alturas")
       runHeightMap(world2)

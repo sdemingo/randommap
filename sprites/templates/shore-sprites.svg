@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg955"
+   width="32"
+   height="512"
+   viewBox="0 0 32 512"
+   sodipodi:docname="shore-sprites.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata961">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs959" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     id="namedview957"
+     showgrid="false"
+     inkscape:zoom="0.85453576"
+     inkscape:cx="413.24938"
+     inkscape:cy="259.74861"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg955" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEAk56BL2NgAAAiRJREFUSMe1Vb1qG0EQnluW6w4jLuKIMEbp1Fi4sV/Br6BaRR4q hVvrHfwKKYTVOE0ILs4IcxihyodAKUb6/Hl27yQl0nCg3dlvvvnbWSXn9w+yld7yQj5LmT23nDYJ W/l2s/1Jm8y9HEn6X7sfa+n+eXndZNCEVgSbiQjMwtLhyEhy8+NXGIJBtxztFL+P5aGkLE5OLCd3 4P/zyh/gYCfpv0XgD5qaI/QgHRb6tSsNoEUZafLT3VVoxsp0WDzdXRl/oTLiAAMFaMjOcXBmwBgf jltXdh1w8MHsv3/esj2DeVFmz/h8/9u1fT1GmYisJ0uYJaNsPVmCYjCeQskYtRIR5nRqExZBDZJR pov4Q7Y9TUbZWW9uCqicrqm38IF1WJAQFgJ8lAKyqmqfp01EkLPefFEWYOeSehEZjKdKrRSMbmHU hUFyEIPxtH6cu/pxzvGuqhr2XFbVY13NOkzdEtCnOdBqLMpiURamaRy4wlZVDRi7tw7MXPg8BXpR FuDyecouoTeJGmfpsEi+fO+bCq6qOr98CxM3vVEidVzNOhwKOrxpcvR6KBffIvsOU66cEBOuJ0uH 8eMSR5tWzTqg4GYwmKNRWqdzz0lxTRAmCtL23xKwD8ZTpz/GR/RWwB6nJiEowS4inqcXdW+KSyW/ fKtmHZEPdt1quj5P1/KOB8NHO8ykenmMG3DxNmyyiLho9ZFQdNz2bEPkFkVB4Y1SDWBma/r8F4TX XREk9De3AAAAAElFTkSuQmCC "
+     id="image2731"
+     x="-32.189106"
+     y="-64.401314"
+     transform="scale(-1)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEAwRoNCqiQAAAoNJREFUWMOlV0tqIlEUPVV5KAhSDdJI1yhDJwmOepSpe6ixS3Ah WUAPHLuHbCBDcWQ2INRAoggNKZTqgdzX913v+1h5ICTlo8655577MXt5P7Tb5RRZNQQAnPcNAMCM erj3FGUNADjuxtG77ep0xWk2NSbzNbbL6fWbWf8u8KKsHUD6WwZC9wh4Ml8DAPLe89h58PD2lQRM AKHIZSB0D4ANOKMUyHMRSqTIe943QfWKssbhdeAqwP8h4Musj9HT580LUnIbyrkEB4Ds95+PltJg ZamGTsQ8z/w5j5inhMsvvUAeICLWA5KtL9rjbmzBJSB95OHPsmpoK267nMLIyH2gmgG5w/k9Hr0k xBUAcCXgO76SCoGnHtWE7ep0w1AC86h84PTcjHooytopPy4/AOTNpraMiIjMr48M+UGr8xBBnmoj KyAFOKUdh0qXq2xSwLkiISIxH8gStJ2QX5IVoRmw68CSc8AOIwDQ+kEIKAauleBl1neCnMzX/xWg hz8Wf73G4mWZQsDXEc/7xg49I8FTXJwiPQFp/iFwVQHKfazBdGlAqgekK4nIsQq3XxpSqaXnVUqr gJikWgpioEVZAwvg8DpwcGwn5CnwDSUJTKAcXOY9RHIyX7sKXGZ958G99S6dLlMm022HER2+D/rA Y2Toe3mPK7NdTt2dUHqAGoYPTNuQfHuDpoazlvvMF4uUk0hxve99RhuTJvIyHn0IXKZDG0Y5/TAJ LSRdpx+RpI9WXTln1JWIBOMmlksLtXtKuwmNYl+71Uyl3ZVNq12dcMDAwTOhLsjbbawragOLN6Tj boysup0H+eOvnzfNQS6S31nR5JFLqfPbkJtE1nfX9Ts2Hf8Bd2HkAe2X390AAAAASUVORK5CYII= "
+     id="image1625"
+     x="0.18910742"
+     y="160.40131"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEAoqR4HkKwAAAgJJREFUWMPNV7FuwjAQvSArW8SAUEQGxMiEmPotzPmsDsx8TsRE N8RghBBDlKkRajqA08vlznZCqtaSpUBsv3cv78528Pb+UYFn09FJfJcUc685dJyCnk0C7DrOSmAx mzZ/wxSO5ysM2ZRNpr5gi9kPURoEXTfo4gFfpTji0hj1CnC4ih9Ge/4u9xdxrKTmCP64qS6RAhPp YbsGAIBlmg1PAAMbIBsYJQoen0bp6MTmKrdYsImg2hVi1JikRJZmHJsFBpwuGGyi+rnaFWxEhiQG tyogvTDgGFQiwzUfcGsWmAVwpOOEX+x+KxvKYNnDVSx6wzsNDYlcxw0S91sJ91sJahLWz5ySnDfq T4Ar1PF8bX1/KnWum9GoSdh4ruCzBbhMM0iuX7IHpCqFwU2kYiTPd9SoyzR7+IDZEwAAFAduIjDS UxXGyQVyHTcImf/wPOwFKUhlMyAmg8GMF6gnbPnvbcJyf6lTBythouKMluu45Q1aV6TTlJK2V+1g bgCp7NIeIZ2MRhjUdJecWAX8vEyzutvKs7MUS3vBYbtulFrJ8dxcqSKKpdhMsFWxalewJdlVfjtV QroYTTFpUxqMgM0LLhI6OrV6LwJUhbq6OfI9Keat7m1CmykxIdtxbbAzoW3hroD/7lQ8cl1GbRfS XzmWu26ztttOn+uceuWa7QPmCugb0EZFAUvJ8rgAAAAASUVORK5CYII= "
+     id="image3380"
+     x="0.18910742"
+     y="0.40131211"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEAk56BL2NgAAAiRJREFUSMe1Vb1qG0EQnluW6w4jLuKIMEbp1Fi4sV/Br6BaRR4q hVvrHfwKKYTVOE0ILs4IcxihyodAKUb6/Hl27yQl0nCg3dlvvvnbWSXn9w+yld7yQj5LmT23nDYJ W/l2s/1Jm8y9HEn6X7sfa+n+eXndZNCEVgSbiQjMwtLhyEhy8+NXGIJBtxztFL+P5aGkLE5OLCd3 4P/zyh/gYCfpv0XgD5qaI/QgHRb6tSsNoEUZafLT3VVoxsp0WDzdXRl/oTLiAAMFaMjOcXBmwBgf jltXdh1w8MHsv3/esj2DeVFmz/h8/9u1fT1GmYisJ0uYJaNsPVmCYjCeQskYtRIR5nRqExZBDZJR pov4Q7Y9TUbZWW9uCqicrqm38IF1WJAQFgJ8lAKyqmqfp01EkLPefFEWYOeSehEZjKdKrRSMbmHU hUFyEIPxtH6cu/pxzvGuqhr2XFbVY13NOkzdEtCnOdBqLMpiURamaRy4wlZVDRi7tw7MXPg8BXpR FuDyecouoTeJGmfpsEi+fO+bCq6qOr98CxM3vVEidVzNOhwKOrxpcvR6KBffIvsOU66cEBOuJ0uH 8eMSR5tWzTqg4GYwmKNRWqdzz0lxTRAmCtL23xKwD8ZTpz/GR/RWwB6nJiEowS4inqcXdW+KSyW/ fKtmHZEPdt1quj5P1/KOB8NHO8ykenmMG3DxNmyyiLho9ZFQdNz2bEPkFkVB4Y1SDWBma/r8F4TX XREk9De3AAAAAElFTkSuQmCC "
+     id="image2731-3"
+     x="-96.401314"
+     y="0.18910743"
+     transform="rotate(-90)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEAk56BL2NgAAAiRJREFUSMe1Vb1qG0EQnluW6w4jLuKIMEbp1Fi4sV/Br6BaRR4q hVvrHfwKKYTVOE0ILs4IcxihyodAKUb6/Hl27yQl0nCg3dlvvvnbWSXn9w+yld7yQj5LmT23nDYJ W/l2s/1Jm8y9HEn6X7sfa+n+eXndZNCEVgSbiQjMwtLhyEhy8+NXGIJBtxztFL+P5aGkLE5OLCd3 4P/zyh/gYCfpv0XgD5qaI/QgHRb6tSsNoEUZafLT3VVoxsp0WDzdXRl/oTLiAAMFaMjOcXBmwBgf jltXdh1w8MHsv3/esj2DeVFmz/h8/9u1fT1GmYisJ0uYJaNsPVmCYjCeQskYtRIR5nRqExZBDZJR pov4Q7Y9TUbZWW9uCqicrqm38IF1WJAQFgJ8lAKyqmqfp01EkLPefFEWYOeSehEZjKdKrRSMbmHU hUFyEIPxtH6cu/pxzvGuqhr2XFbVY13NOkzdEtCnOdBqLMpiURamaRy4wlZVDRi7tw7MXPg8BXpR FuDyecouoTeJGmfpsEi+fO+bCq6qOr98CxM3vVEidVzNOhwKOrxpcvR6KBffIvsOU66cEBOuJ0uH 8eMSR5tWzTqg4GYwmKNRWqdzz0lxTRAmCtL23xKwD8ZTpz/GR/RWwB6nJiEowS4inqcXdW+KSyW/ fKtmHZEPdt1quj5P1/KOB8NHO8ykenmMG3DxNmyyiLho9ZFQdNz2bEPkFkVB4Y1SDWBma/r8F4TX XREk9De3AAAAAElFTkSuQmCC "
+     id="image2731-6"
+     x="0.18910742"
+     y="128.40131"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEAwRoNCqiQAAAoNJREFUWMOlV0tqIlEUPVV5KAhSDdJI1yhDJwmOepSpe6ixS3Ah WUAPHLuHbCBDcWQ2INRAoggNKZTqgdzX913v+1h5ICTlo8655577MXt5P7Tb5RRZNQQAnPcNAMCM erj3FGUNADjuxtG77ep0xWk2NSbzNbbL6fWbWf8u8KKsHUD6WwZC9wh4Ml8DAPLe89h58PD2lQRM AKHIZSB0D4ANOKMUyHMRSqTIe943QfWKssbhdeAqwP8h4Musj9HT580LUnIbyrkEB4Ds95+PltJg ZamGTsQ8z/w5j5inhMsvvUAeICLWA5KtL9rjbmzBJSB95OHPsmpoK267nMLIyH2gmgG5w/k9Hr0k xBUAcCXgO76SCoGnHtWE7ep0w1AC86h84PTcjHooytopPy4/AOTNpraMiIjMr48M+UGr8xBBnmoj KyAFOKUdh0qXq2xSwLkiISIxH8gStJ2QX5IVoRmw68CSc8AOIwDQ+kEIKAauleBl1neCnMzX/xWg hz8Wf73G4mWZQsDXEc/7xg49I8FTXJwiPQFp/iFwVQHKfazBdGlAqgekK4nIsQq3XxpSqaXnVUqr gJikWgpioEVZAwvg8DpwcGwn5CnwDSUJTKAcXOY9RHIyX7sKXGZ958G99S6dLlMm022HER2+D/rA Y2Toe3mPK7NdTt2dUHqAGoYPTNuQfHuDpoazlvvMF4uUk0hxve99RhuTJvIyHn0IXKZDG0Y5/TAJ LSRdpx+RpI9WXTln1JWIBOMmlksLtXtKuwmNYl+71Uyl3ZVNq12dcMDAwTOhLsjbbawragOLN6Tj boysup0H+eOvnzfNQS6S31nR5JFLqfPbkJtE1nfX9Ts2Hf8Bd2HkAe2X390AAAAASUVORK5CYII= "
+     id="image1625-7"
+     x="320.40131"
+     y="-32.189106"
+     transform="rotate(90)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEAk56BL2NgAAAiRJREFUSMe1Vb1qG0EQnluW6w4jLuKIMEbp1Fi4sV/Br6BaRR4q hVvrHfwKKYTVOE0ILs4IcxihyodAKUb6/Hl27yQl0nCg3dlvvvnbWSXn9w+yld7yQj5LmT23nDYJ W/l2s/1Jm8y9HEn6X7sfa+n+eXndZNCEVgSbiQjMwtLhyEhy8+NXGIJBtxztFL+P5aGkLE5OLCd3 4P/zyh/gYCfpv0XgD5qaI/QgHRb6tSsNoEUZafLT3VVoxsp0WDzdXRl/oTLiAAMFaMjOcXBmwBgf jltXdh1w8MHsv3/esj2DeVFmz/h8/9u1fT1GmYisJ0uYJaNsPVmCYjCeQskYtRIR5nRqExZBDZJR pov4Q7Y9TUbZWW9uCqicrqm38IF1WJAQFgJ8lAKyqmqfp01EkLPefFEWYOeSehEZjKdKrRSMbmHU hUFyEIPxtH6cu/pxzvGuqhr2XFbVY13NOkzdEtCnOdBqLMpiURamaRy4wlZVDRi7tw7MXPg8BXpR FuDyecouoTeJGmfpsEi+fO+bCq6qOr98CxM3vVEidVzNOhwKOrxpcvR6KBffIvsOU66cEBOuJ0uH 8eMSR5tWzTqg4GYwmKNRWqdzz0lxTRAmCtL23xKwD8ZTpz/GR/RWwB6nJiEowS4inqcXdW+KSyW/ fKtmHZEPdt1quj5P1/KOB8NHO8ykenmMG3DxNmyyiLho9ZFQdNz2bEPkFkVB4Y1SDWBma/r8F4TX XREk9De3AAAAAElFTkSuQmCC "
+     id="image2731-3-5"
+     x="256.40131"
+     y="-32.189106"
+     transform="rotate(90)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     y="480.40131"
+     x="0.18910742"
+     id="image4117"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBI WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5QEXDCIg7zX5iwAAAVJJREFUWMPFVzEOwjAMNFbE2qFC lfoH/r/xHKQOFWKtKsFk5ATHsZNAvZW63OV8dt3T5XZ9wYGBuRv7usG+bp/rYV7+SwAAIIzn6JqT GOalCym0gj/vUwT+vE/Rb1poZPEXskpgObJFAtwL1hNzEqRWTgmTAlo5pMjdl8qGWo32dfsC90aJ LBKwR14PcNrOogdScCJVOr2lFUv/gWl7tUhcOq2pC1qGS+60mgrBYxivwUgVjUj45YuGwDUFuk7C YV5gvD7M4NUEUqNx31BZwng2zRBslbfVvKHW7ZyA17x8+CH8IdL5wAlj757XcqWyhZrW6Vk2zIF7 xqqUa30ec3LVSFxSUZyEUQ/D1MVw2gH4hhS9jlv3AQ5oeY1TnI76MCElgnVo9N6axC7gGw7fhHuv a2IXSLthSxtac1UPeLZiby6ZFY8wICfq+jitzZW2Z8p/A4P93UClyv/TAAAAAElFTkSuQmCC "
+     preserveAspectRatio="none"
+     height="32"
+     width="32"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBI WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5QEXEh0THoM82wAAAhxJREFUWMO9VrtuwzAMpAXBmxEU aSDUQ5AxS4J+TuYM/azO/Yr8QJcgU7cGGVwYhQcjm2HAHVI5FEPKsvPgZMuPO5HHo6Lnt1kD/zFf bwEAoNrlMDRmLxPnfv/z630nmmwWTfNxdAhcS6JPKLp7G/HSPISAthdf76/OA0rorgSiVdIu2HIM jSw5OPfpcRqWAW73tAwhuugCpGRVn93dWhfpcQq6LirQ49h5QPVwT11oAABMwuqBErtWGyIBC4IB 66JyXuoLTs1IMiRWhBbckqEmxelg//3piE8C4whqAIBRmkNRPJ0XiSZCfCJLDr06wLHiUXpqrzI7 7W6U5u01F7Qk8/V2sHUrDGzBO1mvklas13ZGqwFMoszMhRa6sjDUITUVXwnd4JwOrDilUkj60Fh4 dVFdgPv0gIU5tBSOE1oSGNynA64cuE1DhHkxC2jaqUBDRNpndujQn3GlwNni5kdIWaLJZtFwD3xC DOkQer6kXdBOQ99PJQBunZoZLkO1y8UuUNJP8WCiw0kKqVvipRH1wA4jOhX1OAbOrn2goWdMtg1p JjAYNiy7XhcVlGDOG+hxxlTc/OfW7E5xdsrMOG0plcrXDZruWhIhzgJ2zRIM6DF0Clc65Io+wLkh rjclzp0tfWfM+XoL8dKcCOAP6Y985iMFFi+2bE4XirNZqZa+damNpVa2WVFcfX1l4TTiA+e+w1kR rfjWIR3z/wAYW1EclxS/9AAAAABJRU5ErkJggg== "
+     id="image1020"
+     x="-32.189106"
+     y="-128.40131"
+     transform="scale(-1)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBI WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5QEXEh0THoM82wAAAhxJREFUWMO9VrtuwzAMpAXBmxEU aSDUQ5AxS4J+TuYM/azO/Yr8QJcgU7cGGVwYhQcjm2HAHVI5FEPKsvPgZMuPO5HHo6Lnt1kD/zFf bwEAoNrlMDRmLxPnfv/z630nmmwWTfNxdAhcS6JPKLp7G/HSPISAthdf76/OA0rorgSiVdIu2HIM jSw5OPfpcRqWAW73tAwhuugCpGRVn93dWhfpcQq6LirQ49h5QPVwT11oAABMwuqBErtWGyIBC4IB 66JyXuoLTs1IMiRWhBbckqEmxelg//3piE8C4whqAIBRmkNRPJ0XiSZCfCJLDr06wLHiUXpqrzI7 7W6U5u01F7Qk8/V2sHUrDGzBO1mvklas13ZGqwFMoszMhRa6sjDUITUVXwnd4JwOrDilUkj60Fh4 dVFdgPv0gIU5tBSOE1oSGNynA64cuE1DhHkxC2jaqUBDRNpndujQn3GlwNni5kdIWaLJZtFwD3xC DOkQer6kXdBOQ99PJQBunZoZLkO1y8UuUNJP8WCiw0kKqVvipRH1wA4jOhX1OAbOrn2goWdMtg1p JjAYNiy7XhcVlGDOG+hxxlTc/OfW7E5xdsrMOG0plcrXDZruWhIhzgJ2zRIM6DF0Clc65Io+wLkh rjclzp0tfWfM+XoL8dKcCOAP6Y985iMFFi+2bE4XirNZqZa+damNpVa2WVFcfX1l4TTiA+e+w1kR rfjWIR3z/wAYW1EclxS/9AAAAABJRU5ErkJggg== "
+     id="image1020-5-3"
+     x="-224.40131"
+     y="0.18910742"
+     transform="rotate(-90)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBI WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5QEXEh0THoM82wAAAhxJREFUWMO9VrtuwzAMpAXBmxEU aSDUQ5AxS4J+TuYM/azO/Yr8QJcgU7cGGVwYhQcjm2HAHVI5FEPKsvPgZMuPO5HHo6Lnt1kD/zFf bwEAoNrlMDRmLxPnfv/z630nmmwWTfNxdAhcS6JPKLp7G/HSPISAthdf76/OA0rorgSiVdIu2HIM jSw5OPfpcRqWAW73tAwhuugCpGRVn93dWhfpcQq6LirQ49h5QPVwT11oAABMwuqBErtWGyIBC4IB 66JyXuoLTs1IMiRWhBbckqEmxelg//3piE8C4whqAIBRmkNRPJ0XiSZCfCJLDr06wLHiUXpqrzI7 7W6U5u01F7Qk8/V2sHUrDGzBO1mvklas13ZGqwFMoszMhRa6sjDUITUVXwnd4JwOrDilUkj60Fh4 dVFdgPv0gIU5tBSOE1oSGNynA64cuE1DhHkxC2jaqUBDRNpndujQn3GlwNni5kdIWaLJZtFwD3xC DOkQer6kXdBOQ99PJQBunZoZLkO1y8UuUNJP8WCiw0kKqVvipRH1wA4jOhX1OAbOrn2goWdMtg1p JjAYNiy7XhcVlGDOG+hxxlTc/OfW7E5xdsrMOG0plcrXDZruWhIhzgJ2zRIM6DF0Clc65Io+wLkh rjclzp0tfWfM+XoL8dKcCOAP6Y985iMFFi+2bE4XirNZqZa+damNpVa2WVFcfX1l4TTiA+e+w1kR rfjWIR3z/wAYW1EclxS/9AAAAABJRU5ErkJggg== "
+     id="image1020-5-5"
+     x="288.40131"
+     y="-32.189106"
+     transform="rotate(90)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBI WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5QEXEh0THoM82wAAAhxJREFUWMO9VrtuwzAMpAXBmxEU aSDUQ5AxS4J+TuYM/azO/Yr8QJcgU7cGGVwYhQcjm2HAHVI5FEPKsvPgZMuPO5HHo6Lnt1kD/zFf bwEAoNrlMDRmLxPnfv/z630nmmwWTfNxdAhcS6JPKLp7G/HSPISAthdf76/OA0rorgSiVdIu2HIM jSw5OPfpcRqWAW73tAwhuugCpGRVn93dWhfpcQq6LirQ49h5QPVwT11oAABMwuqBErtWGyIBC4IB 66JyXuoLTs1IMiRWhBbckqEmxelg//3piE8C4whqAIBRmkNRPJ0XiSZCfCJLDr06wLHiUXpqrzI7 7W6U5u01F7Qk8/V2sHUrDGzBO1mvklas13ZGqwFMoszMhRa6sjDUITUVXwnd4JwOrDilUkj60Fh4 dVFdgPv0gIU5tBSOE1oSGNynA64cuE1DhHkxC2jaqUBDRNpndujQn3GlwNni5kdIWaLJZtFwD3xC DOkQer6kXdBOQ99PJQBunZoZLkO1y8UuUNJP8WCiw0kKqVvipRH1wA4jOhX1OAbOrn2goWdMtg1p JjAYNiy7XhcVlGDOG+hxxlTc/OfW7E5xdsrMOG0plcrXDZruWhIhzgJ2zRIM6DF0Clc65Io+wLkh rjclzp0tfWfM+XoL8dKcCOAP6Y985iMFFi+2bE4XirNZqZa+damNpVa2WVFcfX1l4TTiA+e+w1kR rfjWIR3z/wAYW1EclxS/9AAAAABJRU5ErkJggg== "
+     id="image1020-5-6"
+     x="0.18910599"
+     y="384.40131"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEiEiPK5FHgAAAf9JREFUSMetVjtqw0AQHSlCgYBRQAQRVSndxKRK5dZ3cO0j5CA5 QIrUukMu4NK4Si4g2MLEQhCIsFGKEaPx7uxKWqLCWNLqzZt58wuW2+Pn+1OwngHA6dAAQJTG8H9X 2OzVfLNri7otam/006FBcgCQ5OrCQLzIAGC+2QHA1cevG8XxljMjG0muAgwRP3peXdNpPFqV2SSH klxVZYa/IdFH6PPqOn385qenogsa8BAhdySOFPAPPnFHiZTgnDoN6GqL2qRclVlVZm50UwnEiQAA NcBMtQVHy2BTm9OhETMwFInglzz53OguDUgAKgUTkdiRGBwdn9gKqBcZzYiBpo9RDELXakpWBUXW SkEUzZbyAwYc6OSNzcwYGYLl9kg3PJ20tPHug2GzVyiDyV2D8+uDFxrcvvx01ZHGFFzvVoG5F3F0 TToO7d3G+zo4vt5Q5xGJUxGMDU4au0S2dYhJEes84OgiC159U52Imr2KF5mt3+EhMmDSH0zfkA8y ccYODlFkYDvfG6CBbJJyEMRXLg/40G+L2uYyDz2mU5KrMbkr9CLbZzyFxudS1Hel9eziXupraENE t9EKnt++KItsiTR+WzH960SmgWPONTci3zZE5yKxjMWZLq5vdGZg6Gs6C0SMkuZ8zW2lN/Bwf8eX O0dH82uo/W5K8nKt/HZTfv0B0VRYzKFgF74AAAAASUVORK5CYII= "
+     id="image1683"
+     x="106.09779"
+     y="147.17413" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEiEiPK5FHgAAAf9JREFUSMetVjtqw0AQHSlCgYBRQAQRVSndxKRK5dZ3cO0j5CA5 QIrUukMu4NK4Si4g2MLEQhCIsFGKEaPx7uxKWqLCWNLqzZt58wuW2+Pn+1OwngHA6dAAQJTG8H9X 2OzVfLNri7otam/006FBcgCQ5OrCQLzIAGC+2QHA1cevG8XxljMjG0muAgwRP3peXdNpPFqV2SSH klxVZYa/IdFH6PPqOn385qenogsa8BAhdySOFPAPPnFHiZTgnDoN6GqL2qRclVlVZm50UwnEiQAA NcBMtQVHy2BTm9OhETMwFInglzz53OguDUgAKgUTkdiRGBwdn9gKqBcZzYiBpo9RDELXakpWBUXW SkEUzZbyAwYc6OSNzcwYGYLl9kg3PJ20tPHug2GzVyiDyV2D8+uDFxrcvvx01ZHGFFzvVoG5F3F0 TToO7d3G+zo4vt5Q5xGJUxGMDU4au0S2dYhJEes84OgiC159U52Imr2KF5mt3+EhMmDSH0zfkA8y ccYODlFkYDvfG6CBbJJyEMRXLg/40G+L2uYyDz2mU5KrMbkr9CLbZzyFxudS1Hel9eziXupraENE t9EKnt++KItsiTR+WzH960SmgWPONTci3zZE5yKxjMWZLq5vdGZg6Gs6C0SMkuZ8zW2lN/Bwf8eX O0dH82uo/W5K8nKt/HZTfv0B0VRYzKFgF74AAAAASUVORK5CYII= "
+     id="image1683-2"
+     x="0.18910599"
+     y="224.40131"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEiEiPK5FHgAAAf9JREFUSMetVjtqw0AQHSlCgYBRQAQRVSndxKRK5dZ3cO0j5CA5 QIrUukMu4NK4Si4g2MLEQhCIsFGKEaPx7uxKWqLCWNLqzZt58wuW2+Pn+1OwngHA6dAAQJTG8H9X 2OzVfLNri7otam/006FBcgCQ5OrCQLzIAGC+2QHA1cevG8XxljMjG0muAgwRP3peXdNpPFqV2SSH klxVZYa/IdFH6PPqOn385qenogsa8BAhdySOFPAPPnFHiZTgnDoN6GqL2qRclVlVZm50UwnEiQAA NcBMtQVHy2BTm9OhETMwFInglzz53OguDUgAKgUTkdiRGBwdn9gKqBcZzYiBpo9RDELXakpWBUXW SkEUzZbyAwYc6OSNzcwYGYLl9kg3PJ20tPHug2GzVyiDyV2D8+uDFxrcvvx01ZHGFFzvVoG5F3F0 TToO7d3G+zo4vt5Q5xGJUxGMDU4au0S2dYhJEes84OgiC159U52Imr2KF5mt3+EhMmDSH0zfkA8y ccYODlFkYDvfG6CBbJJyEMRXLg/40G+L2uYyDz2mU5KrMbkr9CLbZzyFxudS1Hel9eziXupraENE t9EKnt++KItsiTR+WzH960SmgWPONTci3zZE5yKxjMWZLq5vdGZg6Gs6C0SMkuZ8zW2lN/Bwf8eX O0dH82uo/W5K8nKt/HZTfv0B0VRYzKFgF74AAAAASUVORK5CYII= "
+     id="image1683-9"
+     x="-384.40131"
+     y="0.18910599"
+     transform="rotate(-90)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEiEiPK5FHgAAAf9JREFUSMetVjtqw0AQHSlCgYBRQAQRVSndxKRK5dZ3cO0j5CA5 QIrUukMu4NK4Si4g2MLEQhCIsFGKEaPx7uxKWqLCWNLqzZt58wuW2+Pn+1OwngHA6dAAQJTG8H9X 2OzVfLNri7otam/006FBcgCQ5OrCQLzIAGC+2QHA1cevG8XxljMjG0muAgwRP3peXdNpPFqV2SSH klxVZYa/IdFH6PPqOn385qenogsa8BAhdySOFPAPPnFHiZTgnDoN6GqL2qRclVlVZm50UwnEiQAA NcBMtQVHy2BTm9OhETMwFInglzz53OguDUgAKgUTkdiRGBwdn9gKqBcZzYiBpo9RDELXakpWBUXW SkEUzZbyAwYc6OSNzcwYGYLl9kg3PJ20tPHug2GzVyiDyV2D8+uDFxrcvvx01ZHGFFzvVoG5F3F0 TToO7d3G+zo4vt5Q5xGJUxGMDU4au0S2dYhJEes84OgiC159U52Imr2KF5mt3+EhMmDSH0zfkA8y ccYODlFkYDvfG6CBbJJyEMRXLg/40G+L2uYyDz2mU5KrMbkr9CLbZzyFxudS1Hel9eziXupraENE t9EKnt++KItsiTR+WzH960SmgWPONTci3zZE5yKxjMWZLq5vdGZg6Gs6C0SMkuZ8zW2lN/Bwf8eX O0dH82uo/W5K8nKt/HZTfv0B0VRYzKFgF74AAAAASUVORK5CYII= "
+     id="image1683-9-1"
+     x="-32.189106"
+     y="-448.40131"
+     transform="scale(-1)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <image
+     width="32"
+     height="32"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA B3RJTUUH5QEXEiEiPK5FHgAAAf9JREFUSMetVjtqw0AQHSlCgYBRQAQRVSndxKRK5dZ3cO0j5CA5 QIrUukMu4NK4Si4g2MLEQhCIsFGKEaPx7uxKWqLCWNLqzZt58wuW2+Pn+1OwngHA6dAAQJTG8H9X 2OzVfLNri7otam/006FBcgCQ5OrCQLzIAGC+2QHA1cevG8XxljMjG0muAgwRP3peXdNpPFqV2SSH klxVZYa/IdFH6PPqOn385qenogsa8BAhdySOFPAPPnFHiZTgnDoN6GqL2qRclVlVZm50UwnEiQAA NcBMtQVHy2BTm9OhETMwFInglzz53OguDUgAKgUTkdiRGBwdn9gKqBcZzYiBpo9RDELXakpWBUXW SkEUzZbyAwYc6OSNzcwYGYLl9kg3PJ20tPHug2GzVyiDyV2D8+uDFxrcvvx01ZHGFFzvVoG5F3F0 TToO7d3G+zo4vt5Q5xGJUxGMDU4au0S2dYhJEes84OgiC159U52Imr2KF5mt3+EhMmDSH0zfkA8y ccYODlFkYDvfG6CBbJJyEMRXLg/40G+L2uYyDz2mU5KrMbkr9CLbZzyFxudS1Hel9eziXupraENE t9EKnt++KItsiTR+WzH960SmgWPONTci3zZE5yKxjMWZLq5vdGZg6Gs6C0SMkuZ8zW2lN/Bwf8eX O0dH82uo/W5K8nKt/HZTfv0B0VRYzKFgF74AAAAASUVORK5CYII= "
+     id="image1683-9-1-2"
+     x="448.40131"
+     y="-32.189106"
+     transform="rotate(90)"
+     inkscape:export-filename="/home/sdemingo/src/js/randommap/sprites/grass-shore.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+</svg>
