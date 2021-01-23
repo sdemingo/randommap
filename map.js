@@ -1,6 +1,6 @@
 
 
-let TILE_SZ = 2
+let TILE_SZ = 32
 
 let WATER = -1
 let SAND = 0
@@ -9,8 +9,8 @@ let FOREST = 2
 let MOUNTAIN = 3
 let SNOW = 4
 
-let MAX_COLS=512
-let MAX_ROWS=256
+let MAX_COLS = 32
+let MAX_ROWS = 32
 
 
 function Tile(type) {
@@ -35,6 +35,7 @@ function getColorByType(tile) {
     }
 }
 
+
 function getColorByHeight(tile) {
     let i = Math.abs(tile.height) * 256
     return "rgb(" + i + "," + i + "," + i + ")"
@@ -43,12 +44,20 @@ function getColorByHeight(tile) {
 
 Tile.prototype.render = function (ctxt, x, y, colorFunc) {
     let color = colorFunc(this)
-    console.log(color)
     ctxt.beginPath()
     ctxt.rect(x * TILE_SZ, y * TILE_SZ, TILE_SZ, TILE_SZ)
     ctxt.fillStyle = color
     ctxt.fill()
     ctxt.closePath()
+}
+
+
+Tile.prototype.draw = function (map, col, row) {
+
+    map.ctxt.drawImage(map.sprites[GRASS],  col * TILE_SZ, row * TILE_SZ)
+    if (this.type != GRASS) {
+        map.ctxt.drawImage(map.sprites[this.type],  col * TILE_SZ, row * TILE_SZ)
+    }
 }
 
 
@@ -85,7 +94,29 @@ function Map(titleText) {
 
         }
     }
+
+
+    // Cargo sprites
+    let spritesLoaded=0
+    this.sprites = []
+    this.sprites[WATER] = new Image()
+    this.sprites[WATER].onload=function(){spritesLoaded++}
+    this.sprites[WATER].src = "sprites/water.png"
+
+    this.sprites[GRASS] = new Image()
+    this.sprites[GRASS].onload=function(){spritesLoaded++}
+    this.sprites[GRASS].src = "sprites/grass.png"
+
+    this.sprites[FOREST] = new Image()
+    this.sprites[FOREST].onload=function(){spritesLoaded++}
+    this.sprites[FOREST].src = "sprites/tree.png"
+
+    this.spritesReady = function(){
+        return spritesLoaded == 3
+    }
 }
+
+
 
 Map.prototype.isWall = function (r, c) {
     if (r < 0 || c < 0) {
@@ -94,16 +125,22 @@ Map.prototype.isWall = function (r, c) {
     if (c > this.cols - 1 || r > this.rows - 1) {
         return true;
     }
-    return this.grid[r][c].type == FOREST;
+    return this.grid[c][r].type == FOREST;
 
 }
 
 
 Map.prototype.render = function (colorFunc) {
+    if (!this.spritesReady()){
+        console.log("Sprites no cargados aun")
+        return
+    }
+
     this.ctxt.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    for (var x = 0; x < this.cols; x++) {
-        for (var y = 0; y < this.rows; y++) {
-            this.grid[x][y].render(this.ctxt, x, y, colorFunc)
+    for (var col = 0; col < this.cols; col++) {
+        for (var row = 0; row < this.rows; row++) {
+            //this.grid[x][y].render(this.ctxt, x, y, colorFunc)
+            this.grid[col][row].draw(this, col, row)
         }
     }
 }
