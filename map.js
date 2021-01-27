@@ -12,7 +12,9 @@ let MAX_COLS = 16
 let MAX_ROWS = 16
 
 
-function Tile(type) {
+function Tile(row, col, type) {
+    this.row = row
+    this.col = col
     this.type = type
     this.height = 0
 }
@@ -50,34 +52,34 @@ Tile.prototype.render = function (ctxt, x, y, colorFunc) {
 }
 
 
-Tile.prototype.draw = function (map, col, row, auto) {
+Tile.prototype.draw = function (map, auto) {
     let mask = 15
     if (auto) {
-        mask = getGrassSprite(map, col, row)
+        mask = getGrassSprite(map, this.col, this.row)
     }
     map.ctxt.drawImage(map.sprites[GRASS],
         0, mask * TILE_SZ,
         TILE_SZ, TILE_SZ,
-        col * TILE_SZ, row * TILE_SZ,
+        this.col * TILE_SZ, this.row * TILE_SZ,
         TILE_SZ, TILE_SZ)
 
     if (this.type != GRASS) {
-        map.ctxt.drawImage(map.sprites[this.type], col * TILE_SZ, row * TILE_SZ)
+        map.ctxt.drawImage(map.sprites[this.type], this.col * TILE_SZ, this.row * TILE_SZ)
     }
 }
 
 
 function getGrassSprite(map, col, row) {
-    let a = map.getTileType(row - 1, col)
-    let b = map.getTileType(row, col + 1)
-    let c = map.getTileType(row + 1, col)
-    let d = map.getTileType(row, col - 1)
+    let a = map.getTileType(map.getTile(row - 1, col))
+    let b = map.getTileType(map.getTile(row, col + 1))
+    let c = map.getTileType(map.getTile(row + 1, col))
+    let d = map.getTileType(map.getTile(row, col - 1))
 
     let mask = 0
-    if (a == GRASS) { mask += 1 }
-    if (b == GRASS) { mask += 2 }
-    if (c == GRASS) { mask += 4 }
-    if (d == GRASS) { mask += 8 }
+    if (a != WATER) { mask += 1 }
+    if (b != WATER) { mask += 2 }
+    if (c != WATER) { mask += 4 }
+    if (d != WATER) { mask += 8 }
 
     return mask
 }
@@ -111,7 +113,7 @@ function Map(titleText) {
             //if (Math.floor(Math.random() * 101 < FOREST_AMOUNT)) {
             //    this.grid[x][y] = new Tile(FOREST)
             //} else {
-            this.grid[x][y] = new Tile(GRASS)
+            this.grid[x][y] = new Tile(y, x, GRASS)
             //}
 
         }
@@ -150,11 +152,15 @@ Map.prototype.isWall = function (r, c) {
     return this.grid[c][r].type == FOREST;
 }
 
-Map.prototype.getTileType = function (r, c) {
-    if ((r < 0) || (c < 0) || (r >= this.rows) || (c >= this.cols)) {
+Map.prototype.getTileType = function (tile) {
+    /*if (!tile || (tile.row < 0) || (tile.col < 0) || (tile.row > this.rows) || (tile.col > this.cols)) {
+        return GRASS
+    }*/
+    if (!tile) {
         return GRASS
     }
-    return this.grid[c][r].type
+
+    return tile.type
 }
 
 
@@ -167,26 +173,29 @@ Map.prototype.render = function (autoTiling = true) {
     this.ctxt.clearRect(0, 0, this.canvas.width, this.canvas.height);
     for (var col = 0; col < this.cols; col++) {
         for (var row = 0; row < this.rows; row++) {
-            //this.grid[x][y].render(this.ctxt, x, y, colorFunc)
-            this.grid[col][row].draw(this, col, row, autoTiling)
+            this.grid[col][row].draw(this, autoTiling)
         }
     }
 }
 
-
-Map.prototype.setTileTypeByHeight = function (row, col) {
-    let tile
-    try {
-        tile = this.grid[col][row]
-    } catch (e) { }
-
-    if (tile) {
-        console.log(tile.height)
-        if (tile.height > 1) {
-            tile.type = FOREST
-        }
+Map.prototype.getTile = function (row, col) {
+    if ((row < 0) || (col < 0) || (row >= this.rows) || (col >= this.cols)) {
+        return null
     }
+    return this.grid[col][row]
 }
 
+Map.prototype.getNeighbour = function (tile) {
+    let n = []
+    for (let c = tile.col - 1; c <= tile.col - 1; c++) {
+        for (let r = tile.row - 1; r <= tile.row; r++) {
+            let tile = this.getTile(r,c)
+            if (tile){
+                n.push(tile)
+            }
+        }
+    }
+    return n
+}
 
 

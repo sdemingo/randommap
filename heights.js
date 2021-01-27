@@ -30,48 +30,19 @@ function distanceToTheCenter(map, col, row) {
 
 }
 
-
 function runHeightMap(map) {
     noise.seed(Math.random())
     for (var col = 0; col < map.cols; col++) {
         for (var row = 0; row < map.rows; row++) {
             // calculo gradiente desde el centro a las aristas del mapa
-            let distance = distanceToTheCenter(map, col, row)
+            //let distance = distanceToTheCenter(map, col, row)
+            //let max_width = (map.rows * TILE_SZ) * 0.5 - 10.0;
+            //let delta = distance / max_width;
+            //let gradient = delta * delta;
 
-            let max_width = (map.rows * TILE_SZ) * 0.5 - 10.0;
-            let delta = distance / max_width;
-            let gradient = delta * delta;
-
-            let h=Math.abs(noise.perlin2(col / 100, row / 100))
-            h*=Math.max(0.0, 1.0 - gradient);
-
-            map.grid[col][row].height = h
-
-
-            if (map.grid[col][row].height < 5) {
-                map.grid[col][row].type = WATER
-            }
-
-            if (map.grid[col][row].height >= 5) {
-                map.grid[col][row].type = SAND
-            }
-
-            /*
-            if (map.grid[col][row].height >= 7){
-                map.grid[col][row].type = GRASS
-            }
-
-            if (map.grid[col][row].height >= 20){
-                map.grid[col][row].type = FOREST
-            }
-
-            if (map.grid[col][row].height >= 40){
-                map.grid[col][row].type = MOUNTAIN
-            }
-
-            if (map.grid[col][row].height >= 60){
-                map.grid[col][row].type = SNOW
-            }*/
+            let h = Math.abs(noise.perlin2(col / 100, row / 100))
+            map.grid[col][row].height = h * 10
+            map.setTileTypeByHeight(row,col)
         }
     }
 }
