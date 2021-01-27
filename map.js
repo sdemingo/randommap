@@ -3,7 +3,6 @@
 let TILE_SZ = 32
 
 let WATER = -1
-let SAND = 0
 let GRASS = 1
 let FOREST = 2
 let MOUNTAIN = 3
@@ -51,19 +50,16 @@ Tile.prototype.render = function (ctxt, x, y, colorFunc) {
 }
 
 
-Tile.prototype.draw = function (map, col, row,auto) {
-
-    let mask=15
-    if (auto){
+Tile.prototype.draw = function (map, col, row, auto) {
+    let mask = 15
+    if (auto) {
         mask = getGrassSprite(map, col, row)
     }
-
     map.ctxt.drawImage(map.sprites[GRASS],
         0, mask * TILE_SZ,
         TILE_SZ, TILE_SZ,
         col * TILE_SZ, row * TILE_SZ,
         TILE_SZ, TILE_SZ)
-
 
     if (this.type != GRASS) {
         map.ctxt.drawImage(map.sprites[this.type], col * TILE_SZ, row * TILE_SZ)
@@ -71,32 +67,18 @@ Tile.prototype.draw = function (map, col, row,auto) {
 }
 
 
-// Autotiling function: Tengo que afinarlo en los bordes
 function getGrassSprite(map, col, row) {
-    if ((col==0) || (col==map.cols-1) || (row==0) || (row==map.rows-1)){
-        return 15 // es borde
-    }
-
-    let a, b, c, d
-    if (row - 1 >= 0) {
-        a = map.grid[col][row - 1]
-    }
-    if (col + 1 < map.cols) {
-        b = map.grid[col + 1][row]
-    }
-    if (row + 1 < map.rows) {
-        c = map.grid[col][row + 1]
-    }
-    if (col - 1 >= 0) {
-        d = map.grid[col - 1][row]
-    }
+    let a = map.getTileType(row - 1, col)
+    let b = map.getTileType(row, col + 1)
+    let c = map.getTileType(row + 1, col)
+    let d = map.getTileType(row, col - 1)
 
     let mask = 0
-    if ((a) && a.type == GRASS) { mask += 1 }
-    if ((b) && b.type == GRASS) { mask += 2 }
-    if ((c) && c.type == GRASS) { mask += 4 }
-    if ((d) && d.type == GRASS) { mask += 8 }
-    
+    if (a == GRASS) { mask += 1 }
+    if (b == GRASS) { mask += 2 }
+    if (c == GRASS) { mask += 4 }
+    if (d == GRASS) { mask += 8 }
+
     return mask
 }
 
@@ -166,11 +148,17 @@ Map.prototype.isWall = function (r, c) {
         return true;
     }
     return this.grid[c][r].type == FOREST;
+}
 
+Map.prototype.getTileType = function (r, c) {
+    if ((r < 0) || (c < 0) || (r >= this.rows) || (c >= this.cols)) {
+        return GRASS
+    }
+    return this.grid[c][r].type
 }
 
 
-Map.prototype.render = function (autoTiling=true) {
+Map.prototype.render = function (autoTiling = true) {
     if (!this.spritesReady()) {
         console.log("Sprites no cargados aun")
         return
@@ -185,6 +173,20 @@ Map.prototype.render = function (autoTiling=true) {
     }
 }
 
+
+Map.prototype.setTileTypeByHeight = function (row, col) {
+    let tile
+    try {
+        tile = this.grid[col][row]
+    } catch (e) { }
+
+    if (tile) {
+        console.log(tile.height)
+        if (tile.height > 1) {
+            tile.type = FOREST
+        }
+    }
+}
 
 
 
