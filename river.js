@@ -32,15 +32,19 @@ function runRiverBuilder(map) {
         riverPath.push({ row: nextRow, col: nextCol })
     }
 
+    // Asignamos el agua y ensanchamos el riverPath aleatoriamente
     for (let tile of riverPath) {
         let t1 = map.getTile(tile.row, tile.col)
-        let t2 = map.getTile(tile.row, tile.col - 1)
-
         if (t1) {
             t1.type = WATER
         }
-        if (t2) {
-            t2.type = WATER
+
+        let riverWidth=getRandomInt(1,3)
+        for (let rw=0;rw<=riverWidth;rw++){
+            let tm = map.getTile(tile.row, tile.col - rw)
+            if (tm) {
+                tm.type = WATER
+            }
         }
     }
 }
