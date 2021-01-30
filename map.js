@@ -8,8 +8,8 @@ let FOREST = 2
 let MOUNTAIN = 3
 let SNOW = 4
 
-let MAX_COLS = 16
-let MAX_ROWS = 16
+let MAX_COLS = 32
+let MAX_ROWS = 32
 
 
 function Tile(row, col, type) {
@@ -152,10 +152,19 @@ Map.prototype.isWall = function (r, c) {
     return this.grid[c][r].type == FOREST;
 }
 
+Map.prototype.isShore = function (tile) {
+    for (let c = tile.col - 1; c <= tile.col + 1; c++) {
+        for (let r = tile.row - 1; r <= tile.row + 1; r++) {
+            let t = this.getTile(r, c)
+            if (t && (t.type == WATER)) {
+                return true
+            }
+        }
+    }
+    return false
+}
+
 Map.prototype.getTileType = function (tile) {
-    /*if (!tile || (tile.row < 0) || (tile.col < 0) || (tile.row > this.rows) || (tile.col > this.cols)) {
-        return GRASS
-    }*/
     if (!tile) {
         return GRASS
     }
@@ -187,15 +196,26 @@ Map.prototype.getTile = function (row, col) {
 
 Map.prototype.getNeighbour = function (tile) {
     let n = []
-    for (let c = tile.col - 1; c <= tile.col - 1; c++) {
-        for (let r = tile.row - 1; r <= tile.row; r++) {
-            let tile = this.getTile(r,c)
-            if (tile){
+    for (let c = tile.col - 1; c <= tile.col + 1; c++) {
+        for (let r = tile.row - 1; r <= tile.row + 1; r++) {
+            let tile = this.getTile(r, c)
+            if (tile) {
                 n.push(tile)
             }
         }
     }
     return n
+}
+
+Map.prototype.getRandomTile = function () {
+    let rrow = getRandomInt(0, this.rows - 1)
+    let rcol = getRandomInt(0, this.cols - 1)
+    return this.getTile(rrow, rcol)
+}
+
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 

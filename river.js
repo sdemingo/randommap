@@ -1,20 +1,14 @@
 
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
 function runRiverBuilder(map) {
 
     // Creo rio vertical
     let riverPath = []
 
     let steps = 0
-
     let nextRow = 0
     let nextCol = getRandomInt(0, map.cols)
 
-    console.log({ row: nextRow, col: nextCol })
     riverPath.push({ row: nextRow, col: nextCol })
 
     while (true) {
@@ -54,31 +48,33 @@ function runRiverBuilder(map) {
 
 
 function runForestBuilder(map) {
-    let tiles = [map.getTile(8, 8),map.getTile(12, 12),map.getTile(3, 3)]
-    let stop=50
+    let stop = 4
 
-    for (let tile of tiles){
-        buildTree(map,tile,stop)
+    for (let i=0;i<12;i++){
+        let randomTile = map.getRandomTile()
+        buildTree(map, randomTile, stop,0)
     }
-   
+
 }
 
 // Recursive builder tree
-function buildTree(map, tile,stop) {
-    if (stop<0){
+function buildTree(map, tile, stop, total) {
+    if (stop < 0) {
         return
     }
-    if (tile.type != FOREST) {
+    if ((tile.type != FOREST) && (tile.type != WATER) && (!map.isShore(tile))) {
         let treeProb = getRandomInt(0, 10)
-        if (treeProb > 5) {
-            stop--
+        let umbral = 2 + (Math.round(total))
+        console.log(umbral)
+        if (treeProb > umbral) {
             tile.type = FOREST
+            total++
+            stop--
             let neig = map.getNeighbour(tile)
-            neig.sort( () => .5 - Math.random())
+            neig.sort(() => .5 - Math.random())
             for (let nt of neig) {
-                buildTree(map,nt,stop)
+                buildTree(map, nt, stop, total)
             }
         }
-
     }
 }
