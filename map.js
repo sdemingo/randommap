@@ -1,15 +1,9 @@
 
-
-let TILE_SZ = 32
-
 let WATER = -1
 let GRASS = 1
 let FOREST = 2
 let MOUNTAIN = 3
 let SNOW = 4
-
-let MAX_COLS = 32
-let MAX_ROWS = 32
 
 
 function Tile(row, col, type) {
@@ -41,14 +35,8 @@ function getColorByHeight(tile) {
     return "rgba(0,0,0," + tile.height + ")"
 }
 
-
-Tile.prototype.render = function (ctxt, x, y, colorFunc) {
-    let color = colorFunc(this)
-    ctxt.beginPath()
-    ctxt.rect(x * TILE_SZ, y * TILE_SZ, TILE_SZ, TILE_SZ)
-    ctxt.fillStyle = color
-    ctxt.fill()
-    ctxt.closePath()
+Tile.prototype.setTileTypeByHeight = function(h){
+    this.height=h
 }
 
 
@@ -58,13 +46,13 @@ Tile.prototype.draw = function (map, auto) {
         mask = getGrassSprite(map, this.col, this.row)
     }
     map.ctxt.drawImage(map.sprites[GRASS],
-        0, mask * TILE_SZ,
-        TILE_SZ, TILE_SZ,
-        this.col * TILE_SZ, this.row * TILE_SZ,
-        TILE_SZ, TILE_SZ)
+        0, mask * map.tileSize,
+        map.tileSize, map.tileSize,
+        this.col * map.tileSize, this.row * map.tileSize,
+        map.tileSize,map.tileSize)
 
     if (this.type != GRASS) {
-        map.ctxt.drawImage(map.sprites[this.type], this.col * TILE_SZ, this.row * TILE_SZ)
+        map.ctxt.drawImage(map.sprites[this.type], this.col * map.tileSize, this.row * map.tileSize)
     }
 }
 
@@ -88,7 +76,7 @@ function getGrassSprite(map, col, row) {
 
 
 
-function Map(titleText) {
+function Map(titleText,width,height,tileSz) {
 
     let div = document.createElement("div")
     let title = document.createElement("h2")
@@ -97,10 +85,13 @@ function Map(titleText) {
     this.canvas = document.createElement("canvas");
     this.ctxt = this.canvas.getContext("2d");
 
-    this.rows = MAX_ROWS
-    this.cols = MAX_COLS
-    this.canvas.width = this.cols * TILE_SZ
-    this.canvas.height = this.rows * TILE_SZ
+    // this.rows = MAX_ROWS
+    // this.cols = MAX_COLS
+    this.rows = height
+    this.cols = width
+    this.tileSize = tileSz
+    this.canvas.width = this.cols * this.tileSize
+    this.canvas.height = this.rows * this.tileSize
 
     div.appendChild(title)
     div.appendChild(this.canvas)

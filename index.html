@@ -12,30 +12,28 @@
   <script type="text/javascript" src="map.js"></script>
   <script>
     window.onload = function () {
-      let world0 = new Map("Rios")
-      //runHeightMap(world0)
+      let world0 = new Map("Rios",32,32,32)
       runRiverBuilder(world0)
       runForestBuilder(world0)
-      
-  
-      setTimeout(function(){world0.render()},100)
+      setTimeout(function () { world0.render() }, 100)
 
-      ///setTimeout(function(){world0.render(false)},100)
+      /*let world2 = new Map("Alturas con Perlin")
+      runHeightMap(world2)
+      world2.render(getColorByType)
+      setTimeout(function(){world2.render(false)},100)*/
 
       /*let world1 = new Map("Automáta celular")
       runCellular(world1)
       setTimeout(function(){world1.render()},100)
 */
 
-      /*let world2 = new Map("Alturas")
-      runHeightMap(world2)
-      world2.render(getColorByType)*/
+
     }
   </script>
 </head>
 
 <body>
-  
+
 </body>
 
 </html>

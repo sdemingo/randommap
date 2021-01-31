@@ -41,7 +41,8 @@ function runHeightMap(map) {
             //let gradient = delta * delta;
 
             let h = Math.abs(noise.perlin2(col / 100, row / 100))
-            map.grid[col][row].height = h * 10
+            let tile = map.getTile(row,col)
+            tile.height = h * 10
             map.setTileTypeByHeight(row,col)
         }
     }
