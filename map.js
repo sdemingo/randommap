@@ -13,31 +13,6 @@ function Tile(row, col, type) {
     this.height = 0
 }
 
-function getColorByType(tile) {
-    switch (tile.type) {
-        case SAND:
-            return 'brown'
-        case GRASS:
-            return 'green'
-        case FOREST:
-            return 'darkGreen'
-        case WATER:
-            return 'darkBlue'
-        case MOUNTAIN:
-            return 'grey'
-        case SNOW:
-            return 'silver'
-    }
-}
-
-
-function getColorByHeight(tile) {
-    return "rgba(0,0,0," + tile.height + ")"
-}
-
-Tile.prototype.setTileTypeByHeight = function(h){
-    this.height=h
-}
 
 
 Tile.prototype.draw = function (map, auto) {
@@ -49,7 +24,7 @@ Tile.prototype.draw = function (map, auto) {
         0, mask * map.tileSize,
         map.tileSize, map.tileSize,
         this.col * map.tileSize, this.row * map.tileSize,
-        map.tileSize,map.tileSize)
+        map.tileSize, map.tileSize)
 
     if (this.type != GRASS) {
         map.ctxt.drawImage(map.sprites[this.type], this.col * map.tileSize, this.row * map.tileSize)
@@ -76,7 +51,7 @@ function getGrassSprite(map, col, row) {
 
 
 
-function Map(titleText,width,height,tileSz) {
+function Map(titleText, width, height, tileSz) {
 
     let div = document.createElement("div")
     let title = document.createElement("h2")
@@ -85,11 +60,10 @@ function Map(titleText,width,height,tileSz) {
     this.canvas = document.createElement("canvas");
     this.ctxt = this.canvas.getContext("2d");
 
-    // this.rows = MAX_ROWS
-    // this.cols = MAX_COLS
     this.rows = height
     this.cols = width
     this.tileSize = tileSz
+
     this.canvas.width = this.cols * this.tileSize
     this.canvas.height = this.rows * this.tileSize
 
@@ -178,6 +152,21 @@ Map.prototype.render = function (autoTiling = true) {
     }
 }
 
+Map.prototype.renderByHeights = function () {
+    this.ctxt.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    for (var col = 0; col < this.cols; col++) {
+        for (var row = 0; row < this.rows; row++){
+            this.ctxt.beginPath()
+            this.ctxt.rect(col * this.tileSize, row * this.tileSize, this.tileSize, this.tileSize)
+            let tile = this.getTile(col,row)
+            //this.ctxt.fillStyle = "rgba(0,0,0," + tile.height + ")"
+            this.ctxt.fillStyle = colourByHeight(tile)
+            this.ctxt.fill()
+            this.ctxt.closePath()
+        }
+    }
+}
+
 Map.prototype.getTile = function (row, col) {
     if ((row < 0) || (col < 0) || (row >= this.rows) || (col >= this.cols)) {
         return null
@@ -210,3 +199,33 @@ function getRandomInt(min, max) {
 }
 
 
+function colourByHeight(tile) {
+    if (tile.height<-0.5){
+        return 'darkBlue'
+    }else if(tile.height<-0.1){
+        return 'blue'
+    }else if(tile.height<0){
+        return '#FFCB9C'
+    }else if(tile.height<0.3){
+        return 'green'
+    }else if(tile.height<0.6){
+        return 'darkGreen'
+    }
+    else{
+        return 'silver'
+    }
+    /*switch (tile.type) {
+        case SAND:
+            return 'brown'
+        case GRASS:
+            return 'green'
+        case FOREST:
+            return 'darkGreen'
+        case WATER:
+            return 'darkBlue'
+        case MOUNTAIN:
+            return 'grey'
+        case SNOW:
+            return 'silver'
+    }*/
+}
