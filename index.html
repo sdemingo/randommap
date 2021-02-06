@@ -9,17 +9,23 @@
   <script type="text/javascript" src="cellular.js"></script>
   <script type="text/javascript" src="heights.js"></script>
   <script type="text/javascript" src="river.js"></script>
+  <script type="text/javascript" src="dungeon.js"></script>
   <script type="text/javascript" src="map.js"></script>
   <script>
     window.onload = function () {
-      /*let world0 = new Map("Rios",32,32,32)
+      let dungeon = new Map("Dungeon",32,32,16,STONE_WALL)
+      runDungeonBuilder(dungeon)
+      setTimeout(function () { dungeon.render(false) }, 100)
+
+      let world0 = new Map("Rios",32,32,32)
       runRiverBuilder(world0)
       runForestBuilder(world0)
-      setTimeout(function () { world0.render() }, 100)*/
+      setTimeout(function () { world0.render() }, 100)
 
-      let world2 = new Map("Alturas con Perlin",256,256,2)
+
+      /*let world2 = new Map("Alturas con Perlin",256,256,2)
       runHeightMap(world2)
-      world2.renderByHeights()
+      world2.renderByHeights()*/
 
       /*let world1 = new Map("Automáta celular")
       runCellular(world1)

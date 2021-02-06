@@ -69,7 +69,7 @@ function buildTree(map, tile, stop, total) {
     if ((tile.type != FOREST) && (tile.type != WATER) && (!map.isShore(tile))) {
         let treeProb = getRandomInt(0, 10)
         let umbral = 2 + (Math.round(total))
-        console.log(umbral)
+        //console.log(umbral)
         if (treeProb > umbral) {
             tile.type = FOREST
             total++

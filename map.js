@@ -4,6 +4,9 @@ let GRASS = 1
 let FOREST = 2
 let MOUNTAIN = 3
 let SNOW = 4
+let STONE_FLOOR = 5
+let STONE_WALL = 6
+let SAND = 7
 
 
 function Tile(row, col, type) {
@@ -15,11 +18,11 @@ function Tile(row, col, type) {
 
 
 
-Tile.prototype.draw = function (map, auto) {
+Tile.prototype.draw = function (map) {
     let mask = 15
-    if (auto) {
-        mask = getGrassSprite(map, this.col, this.row)
-    }
+
+    mask = getGrassSprite(map, this.col, this.row)
+
     map.ctxt.drawImage(map.sprites[GRASS],
         0, mask * map.tileSize,
         map.tileSize, map.tileSize,
@@ -29,6 +32,14 @@ Tile.prototype.draw = function (map, auto) {
     if (this.type != GRASS) {
         map.ctxt.drawImage(map.sprites[this.type], this.col * map.tileSize, this.row * map.tileSize)
     }
+}
+
+Tile.prototype.paint = function (map) {
+    
+    map.ctxt.fillStyle=colorByType(this)
+    map.ctxt.fillRect(this.col * map.tileSize, this.row * map.tileSize,
+        map.tileSize, map.tileSize)
+    //map.ctxt.fill()
 }
 
 
@@ -51,7 +62,7 @@ function getGrassSprite(map, col, row) {
 
 
 
-function Map(titleText, width, height, tileSz) {
+function Map(titleText, width, height, tileSz, defaultMaterial = GRASS) {
 
     let div = document.createElement("div")
     let title = document.createElement("h2")
@@ -75,12 +86,7 @@ function Map(titleText, width, height, tileSz) {
     for (var x = 0; x < this.cols; x++) {
         this.grid[x] = new Array()
         for (var y = 0; y < this.rows; y++) {
-            //if (Math.floor(Math.random() * 101 < FOREST_AMOUNT)) {
-            //    this.grid[x][y] = new Tile(FOREST)
-            //} else {
-            this.grid[x][y] = new Tile(y, x, GRASS)
-            //}
-
+            this.grid[x][y] = new Tile(y, x, defaultMaterial)
         }
     }
 
@@ -133,12 +139,11 @@ Map.prototype.getTileType = function (tile) {
     if (!tile) {
         return GRASS
     }
-
     return tile.type
 }
 
 
-Map.prototype.render = function (autoTiling = true) {
+Map.prototype.render = function (drawSprites = true) {
     if (!this.spritesReady()) {
         console.log("Sprites no cargados aun")
         return
@@ -147,7 +152,11 @@ Map.prototype.render = function (autoTiling = true) {
     this.ctxt.clearRect(0, 0, this.canvas.width, this.canvas.height);
     for (var col = 0; col < this.cols; col++) {
         for (var row = 0; row < this.rows; row++) {
-            this.grid[col][row].draw(this, autoTiling)
+            if (drawSprites) {
+                this.grid[col][row].draw(this)
+            } else {
+                this.grid[col][row].paint(this)
+            }
         }
     }
 }
@@ -155,10 +164,10 @@ Map.prototype.render = function (autoTiling = true) {
 Map.prototype.renderByHeights = function () {
     this.ctxt.clearRect(0, 0, this.canvas.width, this.canvas.height);
     for (var col = 0; col < this.cols; col++) {
-        for (var row = 0; row < this.rows; row++){
+        for (var row = 0; row < this.rows; row++) {
             this.ctxt.beginPath()
             this.ctxt.rect(col * this.tileSize, row * this.tileSize, this.tileSize, this.tileSize)
-            let tile = this.getTile(col,row)
+            let tile = this.getTile(col, row)
             //this.ctxt.fillStyle = "rgba(0,0,0," + tile.height + ")"
             this.ctxt.fillStyle = colourByHeight(tile)
             this.ctxt.fill()
@@ -200,21 +209,25 @@ function getRandomInt(min, max) {
 
 
 function colourByHeight(tile) {
-    if (tile.height<-0.5){
+    if (tile.height < -0.5) {
         return 'darkBlue'
-    }else if(tile.height<-0.1){
+    } else if (tile.height < -0.1) {
         return 'blue'
-    }else if(tile.height<0){
+    } else if (tile.height < 0) {
         return '#FFCB9C'
-    }else if(tile.height<0.3){
+    } else if (tile.height < 0.3) {
         return 'green'
-    }else if(tile.height<0.6){
+    } else if (tile.height < 0.6) {
         return 'darkGreen'
     }
-    else{
+    else {
         return 'silver'
     }
-    /*switch (tile.type) {
+}
+
+
+function colorByType(tile) {
+    switch (tile.type) {
         case SAND:
             return 'brown'
         case GRASS:
@@ -227,5 +240,9 @@ function colourByHeight(tile) {
             return 'grey'
         case SNOW:
             return 'silver'
-    }*/
+        case STONE_FLOOR:
+            return 'silver'
+        case STONE_WALL:
+            return 'black'
+    }
 }
