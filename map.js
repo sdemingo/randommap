@@ -34,11 +34,25 @@ Tile.prototype.draw = function (map) {
     }
 }
 
-Tile.prototype.paint = function (map) {
-    
-    map.ctxt.fillStyle=colorByType(this)
-    map.ctxt.fillRect(this.col * map.tileSize, this.row * map.tileSize,
-        map.tileSize, map.tileSize)
+Tile.prototype.paint = function (map, border = false) {
+
+    if (border) {
+        // dibujo borde primero
+        map.ctxt.fillStyle = "black"
+        map.ctxt.fillRect(this.col * map.tileSize, this.row * map.tileSize,
+            map.tileSize, map.tileSize)
+        // luego dibujo el relleno
+        map.ctxt.fillStyle = colorByType(this)
+        map.ctxt.fillRect((this.col * map.tileSize)+1, (this.row * map.tileSize)+1,
+            map.tileSize-1, map.tileSize-1)
+    } else {
+        map.ctxt.fillStyle = colorByType(this)
+        map.ctxt.fillRect(this.col * map.tileSize, this.row * map.tileSize,
+            map.tileSize, map.tileSize)
+    }
+
+
+
     //map.ctxt.fill()
 }
 
@@ -155,7 +169,7 @@ Map.prototype.render = function (drawSprites = true) {
             if (drawSprites) {
                 this.grid[col][row].draw(this)
             } else {
-                this.grid[col][row].paint(this)
+                this.grid[col][row].paint(this, true)
             }
         }
     }
