@@ -1,5 +1,5 @@
 
-let MAX_ROOMS = 8
+let MAX_ROOMS = 4
 
 
 const MIN_ROOM_WIDTH = 5
@@ -23,6 +23,18 @@ function divideSpace(map, room, count) {
         if (!childs){
             return
         }
+
+        if (childs[0].validSpace() && childs[1].validSpace()){
+            count+=2
+            childs[0].parent=room
+            childs[1].parent=room
+
+            room.children=childs
+
+            divideSpace(map, childs[1], count)
+            divideSpace(map, childs[0], count)
+        }
+        /*
         if (childs[0].validSpace()){
             room.children.push(childs[0])
             count++
@@ -32,10 +44,12 @@ function divideSpace(map, room, count) {
             room.children.push(childs[1])
             count++
             divideSpace(map, childs[1], count)
-        }
+        }*/
     }
 }
 
+// Dibujo habitación. Una habitación siempre será una hoja del árbol
+// de espacios.
 function drawSpaces(map,room){
     if (!room){
         return
@@ -45,8 +59,28 @@ function drawSpaces(map,room){
     }
     drawSpaces(map,room.children[0])
     drawSpaces(map,room.children[1])
-    
+    drawCorridor(map,room.children[0],room.children[1])
 }
+
+
+// Dibujo un pasillo. Un pasillo siempre será un espacio que une dos 
+// habitaciones hijas
+function drawCorridor(map,room1,room2){
+    if (!room1 || !room2){
+        return
+    }
+    if (room1.row == room2.row){
+        // hermanas en horizontal
+        let corridorRow = getRandomInt(1,room1.height)
+        let corridorCol = Math.max(room1.row,room2.row)
+        let tile = map.getTile(corridorCol, corridorCol)
+        tile.type=STONE_FLOOR
+    }
+}
+
+
+
+
 
 
 function Space(col, row, width, height) {
