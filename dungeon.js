@@ -1,5 +1,5 @@
 
-let MAX_ROOMS = 4
+let MAX_ROOMS = 5
 
 
 const MIN_ROOM_WIDTH = 5
@@ -11,7 +11,8 @@ function runDungeonBuilder(map) {
 
     let c = 0
     divideSpace(map, root, c)
-    drawSpaces(map,root)
+    drawSpaces(map, root)
+    drawCorridors(map, root)
 }
 
 
@@ -20,61 +21,72 @@ function divideSpace(map, room, count) {
         return
     } else {
         let childs = room.split()
-        if (!childs){
+        if (!childs) {
             return
         }
 
-        if (childs[0].validSpace() && childs[1].validSpace()){
-            count+=2
-            childs[0].parent=room
-            childs[1].parent=room
+        if (childs[0].validSpace() && childs[1].validSpace()) {
+            count += 2
+            childs[0].parent = room
+            childs[1].parent = room
 
-            room.children=childs
+            room.children = childs
 
             divideSpace(map, childs[1], count)
             divideSpace(map, childs[0], count)
         }
-        /*
-        if (childs[0].validSpace()){
-            room.children.push(childs[0])
-            count++
-            divideSpace(map, childs[0], count)
-        }
-        if (childs[1].validSpace()){
-            room.children.push(childs[1])
-            count++
-            divideSpace(map, childs[1], count)
-        }*/
     }
 }
 
 // Dibujo habitación. Una habitación siempre será una hoja del árbol
 // de espacios.
-function drawSpaces(map,room){
-    if (!room){
+function drawSpaces(map, room) {
+    if (!room) {
         return
     }
-    if (room.children.length==0){
+    if (room.children.length == 0) {
         room.insertToMap(map)
     }
-    drawSpaces(map,room.children[0])
-    drawSpaces(map,room.children[1])
-    drawCorridor(map,room.children[0],room.children[1])
+    drawSpaces(map, room.children[0])
+    drawSpaces(map, room.children[1])
+}
+
+
+function drawCorridors(map, room) {
+    if (!room) {
+        return
+    }
+
+    if (room.children[0] && room.children[1]) {
+        // && (room.children[0].children.length == 0) &&
+        // (room.children[1].children.length == 0)) {
+
+        drawDoor(map, room.children[0], room.children[1])
+
+        drawCorridors(map, room.children[0])
+        drawCorridors(map, room.children[1])
+    }
+
 }
 
 
 // Dibujo un pasillo. Un pasillo siempre será un espacio que une dos 
 // habitaciones hijas
-function drawCorridor(map,room1,room2){
-    if (!room1 || !room2){
+function drawDoor(map, room1, room2) {
+    if (!room1 || !room2) {
         return
     }
-    if (room1.row == room2.row){
+    if (room1.row == room2.row) {
         // hermanas en horizontal
-        let corridorRow = getRandomInt(1,room1.height)
-        let corridorCol = Math.max(room1.row,room2.row)
-        let tile = map.getTile(corridorCol, corridorCol)
-        tile.type=STONE_FLOOR
+        let doorRow = getRandomInt(room1.row, room1.height)
+        let tile = map.getTile(doorRow, room2.col)
+        tile.type = STONE_FLOOR
+    }
+    if (room1.col == room2.col) {
+        // hermanas en vertical
+        let doorCol = getRandomInt(room1.col, room1.width)
+        let tile = map.getTile(room2.row, doorCol)
+        tile.type = STONE_FLOOR
     }
 }
 
@@ -113,7 +125,7 @@ Space.prototype.split = function () {
         } else {
             if (this.width < MIN_ROOM_WIDTH) {
                 splitType = 0
-            }else{
+            } else {
                 splitType = 1
             }
         }
