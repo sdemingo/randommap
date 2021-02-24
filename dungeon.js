@@ -12,7 +12,7 @@ function runDungeonBuilder(map) {
     let c = 0
     divideSpace(map, root, c)
     drawSpaces(map, root)
-    drawCorridors(map, root)
+    //drawCorridors(map, root)
 }
 
 
@@ -58,8 +58,8 @@ function drawCorridors(map, room) {
     }
 
     if (room.children[0] && room.children[1]) {
-        // && (room.children[0].children.length == 0) &&
-        // (room.children[1].children.length == 0)) {
+        //&& (room.children[0].children.length == 0) 
+        //&& (room.children[1].children.length == 0)) {
 
         drawDoor(map, room.children[0], room.children[1])
 
@@ -78,13 +78,13 @@ function drawDoor(map, room1, room2) {
     }
     if (room1.row == room2.row) {
         // hermanas en horizontal
-        let doorRow = getRandomInt(room1.row, room1.height)
+        let doorRow = Math.floor(room1.height/2)
         let tile = map.getTile(doorRow, room2.col)
         tile.type = STONE_FLOOR
     }
     if (room1.col == room2.col) {
         // hermanas en vertical
-        let doorCol = getRandomInt(room1.col, room1.width)
+        let doorCol = Math.floor(room1.width/2)
         let tile = map.getTile(room2.row, doorCol)
         tile.type = STONE_FLOOR
     }
@@ -131,8 +131,6 @@ Space.prototype.split = function () {
         }
     }
 
-
-    //let splitType = 1
     if (splitType) { // partición vertical
         let splitCol = getRandomInt(2, this.width - 2)
         let s1 = new Space(this.col, this.row, splitCol, this.height)
@@ -146,10 +144,29 @@ Space.prototype.split = function () {
     }
 }
 
-
+/*
 Space.prototype.insertToMap = function (map) {
     for (let c = 0; c <= this.width; c++) {
         for (let r = 0; r <= this.height; r++) {
+            let tile = map.getTile(this.row + r, this.col + c)
+            //console.log(tile)
+            if (tile) {
+                if ((c == 0) || (r == 0) || (c == this.width) || (r == this.height)) {
+                    tile.type = STONE_WALL
+                } else {
+                    tile.type = STONE_FLOOR
+                }
+            }
+        }
+    }
+}*/
+
+// Crea una habitación a partir de un espacio dado. Una habitación básicamente
+// es un espacio al que definimos un "padding" o relleno hacia adentro del espacio
+Space.prototype.makeRoom = function(map){
+    let randPadding = getRandomInt(1, Math.min(this.width,this.height)-1)
+    for (let c = randPadding; c <= this.width - randPadding; c++) {
+        for (let r = randPadding; r <= this.height - randPadding; r++) {
             let tile = map.getTile(this.row + r, this.col + c)
             //console.log(tile)
             if (tile) {
